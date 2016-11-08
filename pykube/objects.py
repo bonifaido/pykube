@@ -298,7 +298,7 @@ class Pod(NamespacedAPIObject):
             "namespace": self.namespace,
             "operation": exec_call,
         }
-        r = self.api.get(**self.api_kwargs(**kwargs))
+        r = self.api.post(**self.api_kwargs(**kwargs))
         r.raise_for_status()
         return r.text
 
